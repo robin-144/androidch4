@@ -1,0 +1,24 @@
+CREATE TABLE words (
+id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+rus TEXT NOT NULL UNIQUE,
+eng TEXT NOT NULL
+);
+
+getAll:
+SELECT * FROM words;
+
+insert:
+INSERT INTO words(rus , eng)
+VALUES (?, ?);
+
+delete:
+DELETE FROM words WHERE id = ?;
+
+update:
+UPDATE words
+SET rus=:rus, eng=:eng
+WHERE id = :id;
+
+getWordById:
+SELECT * FROM words
+WHERE id = ?;
